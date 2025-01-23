@@ -6,7 +6,7 @@ Tenhle projet je rozpracovaná API pro správu skladu. API je napsané v Pythonu
 ### Live api:
 [https://invapi.marian-janek.com/](invapi.marian-janek.com)
 #### Stažení import souboru pro postman: `(Doporučuji pro jednodušší shlednutí funkcnosti)`
-[InventoryAPI](InventoryAPI.postman_collection.json)
+[InventoryAPI](InventoryAPI.postman_collection.json)<br/>
 [postman.com/downloads/](https://www.postman.com/downloads/)
 
 ## Instalace (Doporucuji live demo server)
