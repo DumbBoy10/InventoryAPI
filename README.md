@@ -1,6 +1,6 @@
 # Inventory management API for website
 
-Tenhle projet je rozpracovaná API pro správu skladu. API je napsané v Pythonu s využitím frameworku Flask. Data jsou ukládána do PostgreSQL databáze.
+Tenhle projet je rozpracovaná API pro správu skladu. API je napsané v Pythonu s využitím frameworku FastAPI. Data jsou ukládána do PostgreSQL databáze.
 
 
 ### Live api:
