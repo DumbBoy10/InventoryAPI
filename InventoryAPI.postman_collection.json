@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "fae97c48-743c-44c7-b936-59ecae3bb899",
+		"name": "InventoryAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16229682"
+	},
+	"item": [
+		{
+			"name": "auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "TestUser",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test@marian-janek.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Heslo123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}auth/register?username=TestUser&email=test@test.com&password=Test123",
+					"host": [
+						"{{base_url}}auth"
+					],
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "TestUser"
+						},
+						{
+							"key": "email",
+							"value": "test@test.com"
+						},
+						{
+							"key": "password",
+							"value": "Test123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Heslo123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}auth/login",
+					"host": [
+						"{{base_url}}auth"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/me",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUZrN0IiwiZXhwIjoxNzM3NDkxNDQ1fQ.6Zg-_ZaHy7kWaKpyMaMiFJYg4TUn184o0_bsS55u2l4",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}auth/me",
+					"host": [
+						"{{base_url}}auth"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}category",
+					"host": [
+						"{{base_url}}category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}category?name=Elektronikaa&description=Vsechna elektronika na skladea",
+					"host": [
+						"{{base_url}}category"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Elektronikaa"
+						},
+						{
+							"key": "description",
+							"value": "Vsechna elektronika na skladea"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category/update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}category/update?category_id=1",
+					"host": [
+						"{{base_url}}category"
+					],
+					"path": [
+						"update"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "1"
+						},
+						{
+							"key": "name",
+							"value": "Test",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "Test",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category/delete",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}category/delete?category_id=1",
+					"host": [
+						"{{base_url}}category"
+					],
+					"path": [
+						"delete"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "items",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}items",
+					"host": [
+						"{{base_url}}items"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "apt",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "100",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "items",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}items?name=Test&category_id=1&quantity=99&price=799.90",
+					"host": [
+						"{{base_url}}items"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Test"
+						},
+						{
+							"key": "description",
+							"value": "Test dsc",
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1"
+						},
+						{
+							"key": "quantity",
+							"value": "99"
+						},
+						{
+							"key": "price",
+							"value": "799.90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "items/item",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}items/item?item_id=1",
+					"host": [
+						"{{base_url}}items"
+					],
+					"path": [
+						"item"
+					],
+					"query": [
+						{
+							"key": "item_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "items/update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}items/update?item_id=2",
+					"host": [
+						"{{base_url}}items"
+					],
+					"path": [
+						"update"
+					],
+					"query": [
+						{
+							"key": "item_id",
+							"value": "2"
+						},
+						{
+							"key": "name",
+							"value": "Test",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "Test dsc",
+							"disabled": true
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "quantity",
+							"value": "99",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "799.90",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "items/add_stock",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}items/add_stock?item_id=1&quantity=1",
+					"host": [
+						"{{base_url}}items"
+					],
+					"path": [
+						"add_stock"
+					],
+					"query": [
+						{
+							"key": "item_id",
+							"value": "1"
+						},
+						{
+							"key": "quantity",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "log",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}log",
+					"host": [
+						"{{base_url}}log"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/",
+			"type": "string"
+		}
+	]
+}
